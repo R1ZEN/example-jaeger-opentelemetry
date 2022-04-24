@@ -1,0 +1,24 @@
+{
+  "name": "example-jaeger-opentelemtry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "pm2-dev start ecosystem.config.js"
+  },
+  "author": "Pavel Bely",
+  "license": "ISC",
+  "dependencies": {
+    "@opentelemetry/api": "1.0.4",
+    "@opentelemetry/exporter-jaeger": "1.0.1",
+    "@opentelemetry/propagator-jaeger": "1.0.1",
+    "@opentelemetry/sdk-node": "0.27.0",
+    "@opentelemetry/semantic-conventions": "1.0.1",
+    "axios": "0.26.1",
+    "express": "4.17.3",
+    "pm2": "5.2.0"
+  },
+  "devDependencies": {
+    "prettier": "2.6.2"
+  }
+}
