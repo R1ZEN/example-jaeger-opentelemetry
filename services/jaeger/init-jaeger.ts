@@ -1,13 +1,13 @@
-const { node, api, resources, tracing } = require('@opentelemetry/sdk-node');
-const { JaegerExporter } = require('@opentelemetry/exporter-jaeger');
-const { SemanticResourceAttributes  } = require('@opentelemetry/semantic-conventions');
-const { JaegerPropagator } = require('@opentelemetry/propagator-jaeger');
-const { version } = require('../../package.json');
+import { node, api, resources, tracing } from '@opentelemetry/sdk-node';
+import { JaegerExporter } from '@opentelemetry/exporter-jaeger';
+import { SemanticResourceAttributes  } from '@opentelemetry/semantic-conventions';
+import { JaegerPropagator } from '@opentelemetry/propagator-jaeger';
+import { version } from '../../package.json';
 
 const agentHost = 'localhost';
-const agentPort = 6832;
+const agentPort = '6832';
 
-const initJaeger = (serviceName) => {
+export const initJaeger = (serviceName: string) => {
   console.log(`[Jaeger]: Initializing`);
 
   const traceProvider = new node.NodeTracerProvider({
@@ -35,8 +35,3 @@ const initJaeger = (serviceName) => {
 
   return api.trace.getTracer(serviceName, version);
 };
-
-
-module.exports = {
-  initJaeger,
-}
